@@ -23,7 +23,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-public class ChatClient {
+public class TetrisClient {
 
     BufferedReader in;
     PrintWriter out;
@@ -32,7 +32,7 @@ public class ChatClient {
     JTextArea messageArea = new JTextArea(8, 30);
 
 
-    public ChatClient() {
+    public TetrisClient() {
 
         
         textBox.setEditable(false);
@@ -88,7 +88,7 @@ public class ChatClient {
 
   
     public static void main(String[] args) throws Exception {
-        ChatClient client = new ChatClient();
+        TetrisClient client = new TetrisClient();
         client.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         client.frame.setVisible(true);
         client.run();

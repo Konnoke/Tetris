@@ -16,6 +16,7 @@ import javax.swing.JLabel;
 /**
  *
  * @author Zarathustra aka Kevin aka Konnoke
+ * NOTE TO DANEEL:  NOT NEEDED BUT GOOD REFERENCE TO KEEP FOR NOW TO INCORPORATE INTO TETRIS CLIENT
  */
 public class Tetris extends JFrame {
 
