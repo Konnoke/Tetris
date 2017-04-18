@@ -9,11 +9,11 @@ package tetris;
  *
  * @author yib5063
  */
-public class Score {
+public class Player {
     String name;
     int Score;
 
-    public Score(String name, int Score) {
+    public Player(String name, int Score) {
         this.name = name;
         this.Score = Score;
     }

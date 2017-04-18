@@ -14,7 +14,7 @@ public class LeaderboardServer {
 
     private static final int PORT = 9001;
     private static HashSet<String> names = new HashSet<String>();
-    private static ArrayList<Score> leaderboard = new ArrayList<Score>();
+    private static ArrayList<Player> leaderboard = new ArrayList<Player>();
     
 
     //holds all the messages
