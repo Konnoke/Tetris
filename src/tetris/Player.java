@@ -11,11 +11,11 @@ package tetris;
  */
 public class Player {
     String name;
-    int Score;
+    int score;
 
     public Player(String name, int Score) {
         this.name = name;
-        this.Score = Score;
+        this.score = Score;
     }
 
     public String getName() {
@@ -27,11 +27,11 @@ public class Player {
     }
 
     public int getScore() {
-        return Score;
+        return score;
     }
 
     public void setScore(int Score) {
-        this.Score = Score;
+        this.score = Score;
     }
     
     

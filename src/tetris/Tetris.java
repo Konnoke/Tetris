@@ -21,6 +21,7 @@ import javax.swing.JLabel;
 public class Tetris extends JFrame {
 
   JLabel score;
+  private int scoreInt;
   private int port;
   private String host;
   
@@ -28,6 +29,7 @@ public class Tetris extends JFrame {
   public Tetris(String host, int port) throws IOException {
     this.host = host;
     this.port = port;
+    
     
     score = new JLabel(" 0");
     Board board = new Board(this);
@@ -38,6 +40,7 @@ public class Tetris extends JFrame {
     setTitle("Tetris");
     setDefaultCloseOperation(EXIT_ON_CLOSE);
   }
+  
 
   public JLabel getScore() {
     return score;
