@@ -55,6 +55,8 @@ public class LeaderboardServer {
   public static void updateLeaderboard(Player newChallenger){
     for(int i = 0; i < 10; i++){
       if(newChallenger.score > leaderboard.get(i).score){
+        //adds the score at the highest index and shifts everything.
+        //Removes the 11th element/index 10 because everything was shifted
         leaderboard.add(i, newChallenger);
         leaderboard.remove(10);
       }

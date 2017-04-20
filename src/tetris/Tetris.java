@@ -32,10 +32,11 @@ public class Tetris extends JFrame {
     
     
     score = new JLabel(" 0");
+     add(score, BorderLayout.SOUTH);
     Board board = new Board(this);
     add(board);
     board.start();
-
+    
     setSize(300, 600);
     setTitle("Tetris");
     setDefaultCloseOperation(EXIT_ON_CLOSE);

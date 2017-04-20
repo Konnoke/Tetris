@@ -26,6 +26,7 @@ public class TetrisClient {
   JFrame frame = new JFrame("Chat-Room");
   JTextField textBox = new JTextField(30);
   JTextArea messageArea = new JTextArea(8, 30);
+  Player user = new Player("", 0);
 
   public TetrisClient() {
 
@@ -33,6 +34,9 @@ public class TetrisClient {
     messageArea.setEditable(false);
     frame.getContentPane().add(textBox, "South");
     frame.getContentPane().add(new JScrollPane(messageArea), "Center");
+    
+    //Board board = new Board(user);
+    
     frame.pack();
 
     textBox.addActionListener(new ActionListener() {
