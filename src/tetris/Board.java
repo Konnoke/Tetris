@@ -43,9 +43,9 @@ public class Board extends JPanel implements ActionListener {
     curPiece = new Shape();
     timer = new Timer(400, this);
     timer.start();
-
+     
     //statusbar = String.valueOf(parent.getScore());
-    statusbar =  parent.getScore();
+   
     board = new Tetrominoes[BoardWidth * BoardHeight];
     addKeyListener(new TAdapter());
     clearBoard();
@@ -294,6 +294,9 @@ public class Board extends JPanel implements ActionListener {
         case 'D':
           oneLineDown();
           break;
+        case KeyEvent.VK_TAB:
+            System.out.print("you pressed tab");
+            break;
       }
 
     }

@@ -13,7 +13,7 @@ public class LeaderboardServer {
 
   private static final int PORT = 9001;
   private static HashSet<String> names = new HashSet<String>();
-  private static ArrayList<Player> leaderboard = new ArrayList<Player>();
+  public static ArrayList<Player> leaderboard = new ArrayList<Player>();
 
   static Player one = new Player("Kevin", 9100);
   static Player two = new Player("Kemar", 9001);

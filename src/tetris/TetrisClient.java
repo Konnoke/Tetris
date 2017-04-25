@@ -15,11 +15,12 @@ import java.net.Socket;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-public class TetrisClient {
+public class TetrisClient extends JPanel {
 
   BufferedReader in;
   PrintWriter out;
@@ -46,13 +47,18 @@ public class TetrisClient {
         textBox.setText("");
       }
     });
+    
+    
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    frame.setVisible(true);
+    
   }
 
   private String getServerAddress() {
     return "127.0.0.1";
   }
 
-  private String getName() {
+  public String getName() {
     return JOptionPane.showInputDialog(
         frame,
         "Choose a name:",
@@ -60,7 +66,7 @@ public class TetrisClient {
         JOptionPane.PLAIN_MESSAGE);
   }
 
-  private void run() throws IOException {
+  void run() throws IOException {
 
     String serverAddress = getServerAddress();
     Socket socket = new Socket(serverAddress, 9001);
@@ -79,10 +85,4 @@ public class TetrisClient {
     }
   }
 
-  public static void main(String[] args) throws Exception {
-    TetrisClient client = new TetrisClient();
-    client.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    client.frame.setVisible(true);
-    client.run();
-  }
 }
