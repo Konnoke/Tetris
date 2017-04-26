@@ -26,11 +26,11 @@ public class TetrisClient extends JPanel {
   PrintWriter out;
   JFrame frame = new JFrame("Chat-Room");
   JTextField textBox = new JTextField(30);
-  JTextArea messageArea = new JTextArea(8, 30);
+  JTextArea messageArea = new JTextArea(100, 50);
   Player user = new Player("", 0);
 
   public TetrisClient() {
-
+    frame.setSize(700,1200);
     textBox.setEditable(false);
     messageArea.setEditable(false);
     frame.getContentPane().add(textBox, "South");
@@ -84,5 +84,10 @@ public class TetrisClient extends JPanel {
       }
     }
   }
-
+    public static void main(String[] args) throws Exception {
+        TetrisClient client = new TetrisClient();
+        client.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        client.frame.setVisible(true);
+        client.run();
+    }
 }

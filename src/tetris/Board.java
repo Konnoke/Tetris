@@ -23,8 +23,8 @@ import tetris.Shape.Tetrominoes;
  */
 public class Board extends JPanel implements ActionListener {
 
-  final int BoardWidth = 10;
-  final int BoardHeight = 22;
+  final int BoardWidth = 50;
+  final int BoardHeight = 140;
 
   Timer timer;
   boolean isFallingFinished = false;
@@ -36,6 +36,7 @@ public class Board extends JPanel implements ActionListener {
   JLabel statusbar;
   Shape curPiece;
   Tetrominoes[] board;
+  static TAdapter adpt;
 
   public Board(Tetris parent) {
 
@@ -43,11 +44,11 @@ public class Board extends JPanel implements ActionListener {
     curPiece = new Shape();
     timer = new Timer(400, this);
     timer.start();
-     
+
     //statusbar = String.valueOf(parent.getScore());
-   
+    statusbar =  parent.getScore();
     board = new Tetrominoes[BoardWidth * BoardHeight];
-    addKeyListener(new TAdapter());
+    adpt = new   TAdapter();
     clearBoard();
   }
 
@@ -253,17 +254,17 @@ public class Board extends JPanel implements ActionListener {
         x + squareWidth() - 1, y + 1);
   }
 
-  class TAdapter extends KeyAdapter {
+  public class TAdapter {
 
-    public void keyPressed(KeyEvent e) {
+    public void keyPressed(String input) {
 
       if (!isStarted || curPiece.getShape() == Tetrominoes.NoShape) {
         return;
       }
 
-      int keycode = e.getKeyCode();
+//      int keycode = e.getKeyCode();
 
-      if (keycode == 'p' || keycode == 'P') {
+      if (input.equals("p")|| input.equals("P")) {
         pause();
         return;
       }
@@ -272,31 +273,28 @@ public class Board extends JPanel implements ActionListener {
         return;
       }
 
-      switch (keycode) {
-        case KeyEvent.VK_LEFT:
+      switch (input) {
+        case "l":
           tryMove(curPiece, curX - 1, curY);
           break;
-        case KeyEvent.VK_RIGHT:
+        case "r":
           tryMove(curPiece, curX + 1, curY);
           break;
-        case KeyEvent.VK_DOWN:
+        case "rr":
           tryMove(curPiece.rotateRight(), curX, curY);
           break;
-        case KeyEvent.VK_UP:
+        case "rl":
           tryMove(curPiece.rotateLeft(), curX, curY);
           break;
-        case KeyEvent.VK_SPACE:
+        case "dd":
           dropDown();
           break;
-        case 'd':
+        case "old":
           oneLineDown();
           break;
-        case 'D':
-          oneLineDown();
+        case "p":
+          pause();
           break;
-        case KeyEvent.VK_TAB:
-            System.out.print("you pressed tab");
-            break;
       }
 
     }
